@@ -1,0 +1,221 @@
+body{
+  background-image: url("C:\Users\kinja\OneDrive\Desktop\PROJECTS\todo list\workspace.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; /* Ensures it covers the viewport height */
+  margin: 0; /* Removes default margin */
+  color: white;
+  overflow: hidden;
+}
+
+h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checklist{
+  margin-right: 20px;
+  color: white;
+}
+
+.todo-wrapper{
+  background-color: rgba(34, 29, 29, 0.9);
+  padding: 2%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  max-height: 80vh;
+  overflow-y: auto; 
+  box-shadow: rgba(165, 152, 152, 0.791) 0px 3px 8px;
+  border-radius: 10px;
+  overflow-y: auto; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-color: grey #f1f1f1; /* Thumb and track color */
+  scrollbar-width: thin; 
+}
+
+.todo-input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(149, 149, 142);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.todo-input-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+}
+
+.todo-input-item label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input{
+  padding: 8px;
+  border: none;
+  width: 250px;
+}
+
+.todo-input-item input:focus{
+  outline: 3px solid goldenrod;
+}
+
+.primaryBtn{
+  display: inline-flex;
+  background-color: goldenrod;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  margin-top: 30px;
+  padding: 10px;
+  width: auto;
+  cursor: pointer;
+}
+
+.primaryBtn:hover{
+  background-color: rgba(218, 165, 32, 0.756);
+}
+
+.filter-btns{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.secondaryBtn{
+  display: inline-flex;
+  background-color: rgb(71, 71, 71);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  margin-top: 2px;
+  padding: 10px;
+  margin-right: 2px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.active{
+  background-color: goldenrod;
+}
+
+.filter-icon{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 30px;
+  color: white;
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-btns{
+  margin-bottom: 15px;
+}
+
+.todo-list-items{
+  background-color: rgb(71, 71, 71);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(43, 42, 42);
+}
+
+.todo-list-items h3{
+  font-size: 20px;
+  color: #ffd166;
+  font-weight: bold;
+  margin: 0;
+}
+
+.todo-list-items p{
+  font-size: 14px;
+  color: rgb(159, 159, 159);
+  margin-top: 8px;
+}
+
+.delete-icon{
+  font-size: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #eca0ff;
+}
+
+.check-icon{
+  font-size: 30px;
+  margin-left: 10px;
+  color: #aab2ff;
+  cursor: pointer;;
+}
+
+.edit-icon{
+  font-size: 30px;
+  color: #84ffc9;
+  cursor: pointer;
+}
+
+.todo-list-items input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-list-items.completed h3,
+.todo-list-items.completed p{
+  text-decoration: line-through;
+  color: gray;
+}
+
+.todo-list-items input[type="checkbox"]{
+  margin-right: 10px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.todo-list {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.edit-wrapper{
+  background-color: #45414087;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-wrapper input,
+.edit-wrapper textarea{
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.edit-wrapper .primaryBtn{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font-size: 16px;
+  width: fit-content;
+}
