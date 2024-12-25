@@ -146,35 +146,33 @@ function App() {
             Completed</button>
         </div>
             <div className='todo-list'>
-                {/* Handle all tasks filter */}
                 {currentFilter === 'all' && [...allTodos, ...completedTodos].map((item, index) => {
                     return (
-                        <div className={`todo-list-items ${item.completedOn ? 'completed' : ''}`} key={index}>
-                            <div>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                                {item.completedOn && <p><small>Task Completed On: {item.completedOn}</small></p>}
+                      <div className={`todo-list-items ${item.completedOn ? 'completed' : ''}`} key={index}>
+                          <div>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                            {item.completedOn && <p><small>Task Completed On: {item.completedOn}</small></p>}
                             </div>
                             <div>
-                                {!item.completedOn && (
-                                    <>
-                                        <MdEdit className='edit-icon' onClick={() => handleEdit(index, item)} title='Edit?' />
-                                        <FaCheckSquare className='check-icon' onClick={() => handleComplete(index)} title='Completed?' />
-                                        <RiDeleteBin6Line className='delete-icon' onClick={() => handleDeleteTodo(index)} title='Delete?' />
-                                    </>
-                                )}
-                                {item.completedOn && (
-                                    <>
-                                        <MdEdit className='edit-icon' onClick={() => handleEdit(index, item)} title='Edit?' />
-                                        <RiDeleteBin6Line className='delete-icon' onClick={() => handleDeleteCompletedTodo(index)} title='Delete?' />
-                                    </>
-                                )}
+                              {!item.completedOn && (
+                                <>
+                                <MdEdit className='edit-icon' onClick={() => handleEdit(index, item)} title='Edit?' />
+                                <FaCheckSquare className='check-icon' onClick={() => handleComplete(index)} title='Completed?' />
+                                <RiDeleteBin6Line className='delete-icon' onClick={() => handleDeleteTodo(index)} title='Delete?' />
+                                </>
+                              )}
+                              {item.completedOn && (
+                                <>
+                                <MdEdit className='edit-icon' onClick={() => handleEdit(index, item)} title='Edit?' />
+                                <RiDeleteBin6Line className='delete-icon' onClick={() => handleDeleteCompletedTodo(index)} title='Delete?' />
+                                </>
+                              )}
                             </div>
                         </div>
                     );
                 })}
 
-                {/* Handle todo tasks filter */}
                 {currentFilter === 'todo' && allTodos.map((item, index) => {
                     if (currentEdit === index) {
                         return (
@@ -182,18 +180,15 @@ function App() {
                                 <input
                                     placeholder='Edited Title'
                                     onChange={(e) => handleEditedTitle(e.target.value)}
-                                    value={currentEditedItem.title}
-                                />
+                                    value={currentEditedItem.title} />
                                 <textarea
                                     placeholder='Edited Description'
                                     rows={4}
                                     onChange={(e) => handleEditedDescription(e.target.value)}
-                                    value={currentEditedItem.description}
-                                />
+                                    value={currentEditedItem.description} />
                                 <div className='todo-input-item'>
                                     <button type='button' onClick={handleEditedTodo} className='primaryBtn'>
-                                        EDIT TASK
-                                    </button>
+                                        EDIT TASK </button>
                                 </div>
                             </div>
                         );
@@ -214,7 +209,6 @@ function App() {
                     }
                 })}
 
-                {/* Handle completed tasks filter */}
                 {currentFilter === 'completed' && completedTodos.map((item, index) => {
                     return (
                         <div className='todo-list-items completed' key={index}>
@@ -234,7 +228,6 @@ function App() {
         </div>
     </div>
 );
-
 }
 
 export default App;
